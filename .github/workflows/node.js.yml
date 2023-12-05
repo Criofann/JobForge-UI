@@ -24,6 +24,3 @@ jobs:
 
     - name: Install Express
       run: npm install express
-
-    - name: Install Nunjucks
-      run: npm install nunjucks
