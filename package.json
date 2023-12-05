@@ -1,0 +1,9 @@
+{
+    "name": "JobForge-UI",
+    "lockfileVersion": 3,
+    "requires": true,
+    "packages": {},
+    "scripts": {
+      "start": "node testing.js"
+    }
+  }
