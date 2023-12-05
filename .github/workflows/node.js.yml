@@ -1,4 +1,4 @@
-name: Install Dependancies and Build UI
+name: Install Dependancies
 
 on:
     push:
@@ -27,6 +27,3 @@ jobs:
 
     - name: Install Nunjucks
       run: npm install nunjucks
-
-    - name: Build UI
-      run: npm start
