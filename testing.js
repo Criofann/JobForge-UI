@@ -5,5 +5,4 @@ if (x > 15) // use curly braces for if statements
 { console.log('x is greater than 15') } // indent the code properly
 else {
   console.log('x is less than or equal to 15')
-};
-console.log('This is a short line') // avoid lines longer than 80 characters
+}console.log('This is a short line') // avoid lines longer than 80 characters
