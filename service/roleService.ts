@@ -8,6 +8,6 @@ module.exports.getAllRoles = async function() {
         return response.data
     } catch(e) {
         console.error("get request failed for api/job-roles");
-        return new Error('Could not get orders')
+        return new Error('Could not get roles')
     }
 }
