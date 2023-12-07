@@ -3,6 +3,6 @@ export class Role{
     specification: String
     capabilityName?: String
     bandName?: String
-    Responsibilities: String
+    responsibilities: String
     sharepointLink: String
 }
