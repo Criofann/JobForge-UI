@@ -1,7 +1,7 @@
 import { Role } from "../model/Role";
 import { Application, Request, Response } from "express";
 
-const roleService = require('../service/roleService')
+const roleService = require("../service/roleService");
 
 module.exports = function(app: Application){
     app.get("/job-roles", async (req: Request, res: Response) => {
@@ -11,6 +11,6 @@ module.exports = function(app: Application){
         } catch (e) {
             console.log(e);
         }
-        res.render('roles', { roles : data})
-    })
-}
+        res.render("roles", { roles : data});
+    });
+};
