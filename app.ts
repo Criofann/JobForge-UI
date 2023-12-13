@@ -6,6 +6,12 @@ const nunjucks = require("nunjucks");
 
 const app = express();
 
+app.use('/public', express.static(path.join(__dirname,'public')));
+
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true}));
+
 // Configure Nunjucks
 const appViews = path.join(__dirname, "/views/");
 
