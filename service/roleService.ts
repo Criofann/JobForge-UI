@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Role } from "../model/Role";
+const roleValidator = require("../validator/roleValidator")
 import { Role } from "../model/role";
 const roleValidator = require("../validator/roleValidator")
 
@@ -12,20 +14,17 @@ module.exports.getAllRoles = async function() {
         return new Error('Could not get roles')
     }
 }
-
-module.exports.updateRole = async function (role:Role): Promise<Role> {
-
+module.exports.createRole = async function(role: Role): Promise<number> {
     const error: string = roleValidator.validateRole(role)
-
-    if (error) {
-        throw new Error(error)
-    }
-
-    try {
-        const response = await axios.put('http://localhost:8080/api/update-roles/${role.roleName}', role)
+        if (error){
+            throw new Error(error)
+        }
         
-        return response.data
-    } catch (e) {
-        throw new Error('Could not create order')
+        try{
+            const response = await axios.post('http://localhost:8080/api/job-roles/', role)
+            return response.data
+        } catch (e) {
+            throw new Error('Could not create orders')
+        }
     }
-}
+    

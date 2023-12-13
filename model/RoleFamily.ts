@@ -1,8 +1,9 @@
-export class Role{
+export class RoleFamily{
     roleName: String
     specification: String
     capabilityName?: String
     bandName?: String
-    Responsibilities: String
+    responsibilities: String
     sharepointLink: String
+    jobFamily: String
 }

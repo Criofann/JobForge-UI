@@ -36,10 +36,7 @@
                         <td>{{role.roleName}}</td>
                         <td>{{role.specification}}</td>
                         <td>{{role.responsibilities}}</td>
-                        <td><a href="role.sharepointLink">Sharepoint</a></td>
-                        {% for band in bands %}
-                        <td>{{band.bandLevel}}</td>
-                        {% endfor %}
+                        <td><a href="{{role.sharepointLink}}">Sharepoint</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
