@@ -18,17 +18,14 @@ module.exports = function(app: Application){
         res.render('roles', { roles : data, bands : dataa})
     })
 
-    app.get('/job-roles/:roleName', async (req: Request, res: Response) => {
+    app.get('/job-role-spec/:roleName', async (req: Request, res: Response) => {
         let data: Role;
-
         try {
             data = await roleService.getRoleByID(req.params.roleName)
         } catch (e) {
             console.error(e);
         }
 
-        console.log(data);
-
-        res.render('job-roles', { Role: data })
+        res.render('job-role-spec', { role: data })
     })
 }

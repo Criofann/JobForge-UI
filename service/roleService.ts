@@ -2,6 +2,8 @@ import axios from "axios";
 import { Role } from "../model/Role";
 const roleValidator = require("../validator/roleValidator")
 
+module.exports.URL = '/api/job-roles'
+
 module.exports.getAllRoles = async function() {
     try{
         const response = await axios.get("http://localhost:8080/api/job-roles");
