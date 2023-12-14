@@ -16,4 +16,4 @@ module.exports.createFamily = async function(RoleFamily: RoleFamily): Promise<nu
             throw new Error('Could not create family')
         }
 }
-    
+        
