@@ -1,9 +1,9 @@
 import axios from "axios"
 import MockAdapter from "axios-mock-adapter"
-import chai from "chai" 
-import expect from "chai.expect"
-const expect1 = chai.expect;
-var RoleService = require("../../../service/roleService");
+import { expect } from "chai"
+import { log } from "console"
+const roleService = require("../../../service/roleService")
+
 
 
 const role = {
@@ -21,11 +21,26 @@ describe("RoleService", function () {
 
             const data = [role]
 
-            mock.onGet(RoleService.URL).reply(200, data)
+            mock.onGet(roleService.URL).reply(200, data)
 
-            var results = await RoleService.getRoles()
-
-            expect1(results[0]).to.deep.equal(role)
+            var results = await roleService.getAllRoles()
+            expect(results[0]).to.deep.equal(role)
         })
+
+        it('should throw exception when 500 error returned from axios', async () => {
+            var mock = new MockAdapter(axios);
+    
+            mock.onGet(roleService.URL).reply(500);
+    
+            var error;
+    
+            try {
+              await roleService.getAllRoles()
+            } catch (e) {
+                error = e.message
+            }
+            
+            expect(error).to.equal('Could not get roles')
+          })
     })
 })
