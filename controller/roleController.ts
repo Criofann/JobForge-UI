@@ -30,4 +30,17 @@ module.exports = function(app: Application){
 
         res.render('job-roles', { Role: data })
     })
+
+    app.put('/update-roles/', async (req: Request, res: Response) => {
+        const roleName: string = req.params.roleName
+        const updatedRole: Role = req.body
+    
+        try {
+            await roleService.updateRoles(roleName, updatedRole)
+            res.status(200).send('Role updated successfully')
+        } catch (e) {
+            console.error(e)
+            res.status(500).send('Failed to update role')
+        }
+    })    
 }

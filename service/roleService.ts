@@ -32,8 +32,23 @@ module.exports.createRole = async function(role: Role): Promise<number> {
         try{
             const response = await axios.post('http://localhost:8080/api/job-roles/', role)
             return response.data
+
         } catch (e) {
             throw new Error('Could not create orders')
         }
     }
-    
+
+    module.exports.updateRoles = async function(roleName: String, updatedRole: Role): Promise<number> {
+        const error: string = roleValidator.validateRole(updatedRole);
+        if (error) {
+            throw new Error(error);
+        }
+
+        try {
+            const response = await axios.put(`http://localhost:8080/api/update-roles/${roleName}`, updatedRole)
+            return response.data
+
+        } catch (e) {
+            throw new Error('Could not update role') 
+        }
+    }
