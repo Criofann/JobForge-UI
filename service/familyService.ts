@@ -11,9 +11,14 @@ module.exports.createFamily = async function(RoleFamily: RoleFamily): Promise<nu
         try{
             console.log(RoleFamily)
             const response = await axios.post('http://localhost:8080/api/job-family/', RoleFamily)
+            console.log('databse connectted')
             return response.data
         } catch (e) {
-            throw new Error('Could not create family')
+            if (e.response.status == 400) {
+                throw new Error('Invalid data')}
+            else{
+                throw new Error('Could not create family')
+            }
         }
 }
         
