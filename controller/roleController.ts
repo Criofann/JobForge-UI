@@ -31,7 +31,17 @@ module.exports = function(app: Application){
         res.render('job-roles', { Role: data })
     })
 
-    app.put('/update-roles/', async (req: Request, res: Response) => {
+    app.get("/update-roles", async (req: Request, res: Response) => {
+        let data: Role[];
+        try{
+            data = await roleService.getAllRoles();
+        } catch (e) {
+            console.log(e);
+        }
+        res.render('update-role', {roles : data})
+    })
+
+    app.put('/update-roles/' + roleName, async (req: Request, res: Response) => {
         const roleName: string = req.params.roleName
         const updatedRole: Role = req.body
     

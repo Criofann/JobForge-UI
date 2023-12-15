@@ -18,7 +18,7 @@
         <main class="container mt-4">
             <section id="form" class="bg-light py-5">
                 <div class="container">
-                    <p>Job Role Details</p>
+                    <h3>Job Role Details</h3>
                     {% if errormessage %}
                     <div class="alert alert-danger" role="alert">
                         {{ errormessage }}
@@ -26,7 +26,7 @@
                     {% endif %}
                     <form action="/update-roles/" method="post">
                         <div class="form-group">
-                            <label for="roleName"> roleName </label>
+                            <label for="roleName"> RoleName </label>
                             <input type="text" id="roleName" name="roleName" class="form-control" value="{{ roleName }}" required>
                         </div>
                         <div class="form-group">
