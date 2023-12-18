@@ -3,8 +3,8 @@ import { Band } from "../model/band";
 import { BandRole } from "../model/bandRole";
 import { Application, Request, Response } from "express";
 
-const roleService = require('../service/roleService')
-const bandService = require('../service/bandService')
+const roleService = require("../service/roleService");
+const bandService = require("../service/bandService");
 
 module.exports = function(app: Application){
     app.get("/roles", async (req: Request, res: Response) => {

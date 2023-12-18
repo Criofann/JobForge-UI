@@ -8,7 +8,7 @@ module.exports.getAllRoles = async function() {
     } catch(e) {
         console.error("get request failed for api/job-roles");
         return new Error("Could not get roles");
-    };
+    }
 };
 
 module.exports.getAllBandRoles = async function() {
@@ -19,5 +19,5 @@ module.exports.getAllBandRoles = async function() {
     } catch(e) {
         console.error("Could not get the Band Roles");
         return new Error("Could not get Band Role");
-    };
-}
+    }
+};
