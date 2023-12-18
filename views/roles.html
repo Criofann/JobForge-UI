@@ -17,9 +17,9 @@
         </div>
     </header>
     <main class="container mt-4">
-        <section id="roles" class="mt-4">
+        <section id="bandRoles" class="mt-4">
             <h2>Kainos Job Roles</h2>
-            {% if roles and roles.length > 0 %}
+            {% if bandRoles and bandRoles.length > 0 %}
             <table class="table">
                 <thead>
                     <tr>
@@ -31,15 +31,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for role in roles %}
+                    {% for bandRole in bandRoles %}
                     <tr>
-                        <td>{{role.roleName}}</td>
-                        <td>{{role.specification}}</td>
-                        <td>{{role.responsibilities}}</td>
-                        <td><a href="role.sharepointLink">Sharepoint</a></td>
-                        {% for band in bands %}
-                        <td>{{band.bandLevel}}</td>
-                        {% endfor %}
+                        <td>{{bandRole.roleName}}</td>
+                        <td>{{bandRole.specification}}</td>
+                        <td>{{bandRole.responsibilities}}</td>
+                        <td><a href="bandRole.sharepointLink">Sharepoint</a></td>
+                        <td>{{bandRole.bandLevel}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

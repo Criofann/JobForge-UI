@@ -1,5 +1,6 @@
 import axios from "axios";
-
+import { Role } from "../model/role";
+import { BandRole } from "../model/bandRole";
 
 module.exports.getAllBands = async function() {
     try{
