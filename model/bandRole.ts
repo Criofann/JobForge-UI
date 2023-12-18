@@ -1,7 +1,7 @@
 export class BandRole{
-    roleName: String
-    specification: String
-    responsibilities: String
-    sharepointLink: String
-    bandLevel: String
+    roleName?: string
+    specification?: string
+    responsibilities?: string
+    sharepointLink?: string
+    bandLevel?: string
 }

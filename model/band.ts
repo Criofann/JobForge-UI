@@ -1,5 +1,5 @@
 export class Band{
-    bandName: String
-    bandLevel: String
-    competencies?: String
+    bandName?: string
+    bandLevel?: string
+    competencies?: string
 }

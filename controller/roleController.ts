@@ -16,8 +16,8 @@ module.exports = function(app: Application){
         } catch (e) {
             console.log(e);
         }
-        res.render('roles', { roles : data, bands : dataa})
-    })
+        res.render("roles", { roles : data, bands : dataa});
+    });
 
     app.get("/job-roles", async (req: Request, res: Response) => {
         let data: BandRole[];
@@ -26,6 +26,6 @@ module.exports = function(app: Application){
         } catch (e) {
             console.log(e);
         }
-        res.render('roles', { bandRoles : data})
-    })
-}
+        res.render("roles", { bandRoles : data});
+    });
+};
