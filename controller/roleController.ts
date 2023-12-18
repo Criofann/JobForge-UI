@@ -1,4 +1,4 @@
-import { Role } from "../model/role";
+import { Role } from "../model/Role";
 import { Band } from "../model/band";
 import { BandRole } from "../model/bandRole";
 import { Application, Request, Response } from "express";
