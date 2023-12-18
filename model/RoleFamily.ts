@@ -1,9 +1,9 @@
 export class RoleFamily{
-    roleName: String
-    specification: String
-    capabilityName?: String
-    bandName?: String
-    responsibilities: String
-    sharepointLink: String
-    jobFamily: String
+    roleName: string;
+    specification: string;
+    capabilityName?: string;
+    bandName?: string;
+    responsibilities: string;
+    sharepointLink: string;
+    jobFamily: string;
 }

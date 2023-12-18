@@ -1,4 +1,4 @@
 export class JobFamily{
-    roleName: String
-    jobFamily: String
+    roleName: string;
+    jobFamily: string;
 }

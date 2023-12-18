@@ -9,5 +9,5 @@ module.exports.validateRole = function (role: Role): string {
     if (role.bandName.length > 80) {
         return "Band name greater than 80 characters";
     }
-    return null
-}
+    return null;
+};
