@@ -12,16 +12,16 @@ module.exports.getAllRoles = async function() {
     } catch(e) {
         throw new Error("Could not get roles");
     }
-}
+};
 
-module.exports.getRoleByID = async function (roleName: String): Promise<Role> {
+module.exports.getRoleByID = async function (roleName: string): Promise<Role> {
     try {
         const response = await axios.get("http://localhost:8080/api/job-roles/" + roleName);
 
         return response.data;
     } catch (e) {
         throw new Error("Could not get roles");
-    };
+    }
 };
 
 module.exports.createRole = async function(role: Role): Promise<number> {
@@ -35,6 +35,6 @@ module.exports.createRole = async function(role: Role): Promise<number> {
         return response.data;
     } catch (e) {
         throw new Error("Could not create orders");
-    };
+    }
 };
     

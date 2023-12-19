@@ -20,12 +20,12 @@ describe("RoleService", function () {
 
             mock.onGet(roleService.URL).reply(200, data);
 
-            let results = await roleService.getAllRoles();
+            const results = await roleService.getAllRoles();
             expect(results[0]).to.deep.equal(role);
-        })
+        });
 
         it("should throw exception when 500 error returned from axios", async () => {
-            let mock = new MockAdapter(axios);
+            const mock = new MockAdapter(axios);
     
             mock.onGet(roleService.URL).reply(500);
     
@@ -38,6 +38,6 @@ describe("RoleService", function () {
             }
             
             expect(error).to.equal("Could not get roles");
-          })
-    })
-})
+          });
+    });
+});

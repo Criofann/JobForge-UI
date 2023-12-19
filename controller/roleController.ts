@@ -16,7 +16,7 @@ module.exports = function(app: Application){
             console.log(e);
         }
         res.render("roles", { roles : data, bands : dataa});
-    })
+    });
 
     app.get("/job-role-spec/:roleName", async (req: Request, res: Response) => {
         let data: Role;

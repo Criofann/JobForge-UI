@@ -9,5 +9,5 @@ module.exports.getAllBands = async function() {
     } catch(e) {
         console.error("get request failed for api/band");
         return new Error("Could not get Bands");
-    };
+    }
 };
