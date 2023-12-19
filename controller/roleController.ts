@@ -3,7 +3,6 @@ import { JobFamily } from "../model/JobFamily";
 import { RoleFamily } from "../model/RoleFamily";
 import { Application, Request, Response } from "express";
 
-
 const roleService = require('../service/roleService')
 const familyService = require("../service/familyService")
 
@@ -31,8 +30,6 @@ module.exports = function(app: Application){
             id = await roleService.createRole(role)
             id = await familyService.createFamily(family)
             
-
-            //res.redirect('home')
         }catch(e) {
             
 
@@ -43,19 +40,3 @@ module.exports = function(app: Application){
         
     })
 }
-/*
-try{
-            id = await orderService.createOrder(data)
-            
-
-            res.redirect('/orders/'+id)
-        }catch(e) {
-            let customers: Customer[] = await customerService.getCustomers();
-            
-
-            res.locals.errormessage = e.message
-            res.locals.customers = customers
-
-            res.render('add-order', req.body)
-        }
-*/

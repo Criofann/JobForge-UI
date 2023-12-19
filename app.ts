@@ -35,4 +35,4 @@ app.get("/", (req: Request, res: Response) => {
     res.render("index");
 });
 
-require('./controller/roleController')(app);
+require("./controller/roleController")(app);
