@@ -19,10 +19,13 @@ module.exports.createRole = async function(role: Role): Promise<number> {
         }
         
         try{
+            console.log('role')
+            console.log(role)
             const response = await axios.post('http://localhost:8080/api/job-roles/', role)
             return response.data
         } catch (e) {
             if (e.response.status == 400) {
+                console.log('here')
                 throw new Error('Invalid data')}
             else{
                 throw new Error('Could not create Role')

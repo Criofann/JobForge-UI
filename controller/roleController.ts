@@ -24,12 +24,13 @@ module.exports = function(app: Application){
         let data: RoleFamily = req.body
         let family: JobFamily = {roleName: data.roleName, jobFamily: data.jobFamily}
         delete data.jobFamily
-        let role: Role = data
+        let role: RoleFamily = data
         let id: number
         try{
             id = await roleService.createRole(role)
             id = await familyService.createFamily(family)
             
+
         }catch(e) {
             
 
