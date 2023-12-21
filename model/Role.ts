@@ -1,8 +1,8 @@
 export class Role{
-    roleName?: String
-    specification?: String
-    capabilityName?: String
-    bandName?: String
-    responsibilities?: String
-    sharepointLink?: String
+    roleName?: string;
+    specification?: string;
+    capabilityName?: string;
+    bandName?: string;
+    responsibilities?: string;
+    sharepointLink?: string;
 }

@@ -6,7 +6,7 @@ const nunjucks = require("nunjucks");
 
 const app = express();
 
-app.use('/public', express.static(path.join(__dirname,'public')));
+app.use("/public", express.static(path.join(__dirname,"public")));
 
 app.use(express.json());
 
@@ -35,4 +35,4 @@ app.get("/", (req: Request, res: Response) => {
     res.render("index");
 });
 
-require('./controller/roleController')(app);
+require("./controller/roleController")(app);
