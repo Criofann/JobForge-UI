@@ -5,7 +5,8 @@ import { expect } from "chai";
 
 const RoleService = require("../../../service/roleService");
 const Role = {
-    roleName: "software enginner",
+    roleName: "software engineer",
+    jobFamily: "engineering",
     specification: "add spec later",
     capabilityName: "engineering",
     bandName: "band1",
@@ -16,8 +17,11 @@ const Role = {
 describe("roleService", function (){
     describe("createRole", function (){
         it("should return id from response", async () => {
+          console.log('test-runs')
             const mock = new MockAdapter(axios);
             mock.onPost(RoleService.URL).reply(200,1);
+            mock
+            console.log(Role)
             const results = await RoleService.createRole(Role);
             expect(1).to.deep.equal(results);
 

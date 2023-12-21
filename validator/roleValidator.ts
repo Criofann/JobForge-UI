@@ -1,6 +1,10 @@
 import { Role } from "../model/Role";
 module.exports.validateRole = function (role: Role):string{
+    console.log(role)
     if(role.roleName.length > 20){
+        return "name is grater than 20 charactors";
+    }
+    if(role.jobFamily.length > 20){
         return "name is grater than 20 charactors";
     }
     if(role.specification.length > 100){

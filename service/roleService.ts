@@ -14,6 +14,7 @@ module.exports.getAllRoles = async function() {
 };
 module.exports.createRole = async function(role: Role): Promise<number> {
     const error: string = roleValidator.validateRole(role);
+    console.log("role Service is here")
         if (error){
             throw new Error(error);
         }
@@ -25,7 +26,6 @@ module.exports.createRole = async function(role: Role): Promise<number> {
             return response.data;
         } catch (e) {
             if (e.response.status == 400) {
-                console.log("here");
                 throw new Error("Invalid data");}
             else{
                 throw new Error("Could not create Role");

@@ -1,10 +1,7 @@
 import { Role } from "../model/Role";
-import { JobFamily } from "../model/JobFamily";
-import { RoleFamily } from "../model/RoleFamily";
 import { Application, Request, Response } from "express";
 
 const roleService = require("../service/roleService");
-const familyService = require("../service/familyService");
 
 module.exports = function(app: Application){
     app.get("/job-roles", async (req: Request, res: Response) => {
@@ -21,13 +18,10 @@ module.exports = function(app: Application){
         
     });
     app.post("/add-job-role",  async (req:  Request, res: Response) => {
-        const data: RoleFamily = req.body;
-        const family: JobFamily = {roleName: data.roleName, jobFamily: data.jobFamily};
-        delete data.jobFamily;
-        const role: RoleFamily = data;
+        const role: Role = req.body;
         try{
              await roleService.createRole(role);
-             await familyService.createFamily(family);
+            
             
 
         }catch(e) {
