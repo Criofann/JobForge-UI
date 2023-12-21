@@ -41,9 +41,9 @@ module.exports = function(app: Application){
         res.render('update-role', {roles : data})
     })
 
-    app.put('/update-roles/' + roleName, async (req: Request, res: Response) => {
-        const roleName: string = req.params.roleName
+    app.post('/update-roles/', async (req: Request, res: Response) => {
         const updatedRole: Role = req.body
+        const roleName: String = updatedRole.roleName
     
         try {
             await roleService.updateRoles(roleName, updatedRole)
