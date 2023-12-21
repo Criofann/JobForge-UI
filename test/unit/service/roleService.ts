@@ -17,11 +17,9 @@ const Role = {
 describe("roleService", function (){
     describe("createRole", function (){
         it("should return id from response", async () => {
-          console.log('test-runs')
             const mock = new MockAdapter(axios);
             mock.onPost(RoleService.URL).reply(200,1);
-            mock
-            console.log(Role)
+            mock;
             const results = await RoleService.createRole(Role);
             expect(1).to.deep.equal(results);
 

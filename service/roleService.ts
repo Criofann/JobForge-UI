@@ -14,14 +14,12 @@ module.exports.getAllRoles = async function() {
 };
 module.exports.createRole = async function(role: Role): Promise<number> {
     const error: string = roleValidator.validateRole(role);
-    console.log("role Service is here")
+    console.log("role Service is here");
         if (error){
             throw new Error(error);
         }
         
         try{
-            console.log("role");
-            console.log(role);
             const response = await axios.post("http://localhost:8080/api/job-roles/", role);
             return response.data;
         } catch (e) {

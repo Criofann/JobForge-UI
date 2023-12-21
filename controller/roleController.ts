@@ -21,16 +21,10 @@ module.exports = function(app: Application){
         const role: Role = req.body;
         try{
              await roleService.createRole(role);
-            
-            
-
-        }catch(e) {
-            
-
+        }
+        catch(e) {
             res.locals.errormessage = e.message;
             res.render("add-job-role", req.body);
-        }
-        
-        
+        } 
     });
 };
