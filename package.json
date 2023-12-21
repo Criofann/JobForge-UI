@@ -3,7 +3,7 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "start": "npx tsc && cp -R views dist && node dist/app.js",
+        "start": "npx tsc && cp -R views dist && cp -r public dist && node dist/app.js",
         "lint": "eslint .",
         "test": "ts-mocha test/unit/**/*.ts"
     },

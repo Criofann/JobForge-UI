@@ -11,7 +11,7 @@ app.use("/public", express.static(path.join(__dirname,"public")));
 
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: false}));
 
 const appViews = path.join(__dirname, "/views/");
 

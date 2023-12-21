@@ -9,7 +9,6 @@ module.exports = function(app: Application){
 
     app.post('/login', async(req: Request, res: Response) =>{
         let data: Login = req.body
-
         try{
             req.session.token = await authService.login(data)
 
