@@ -49,3 +49,54 @@ describe("RoleService", function () {
           });
     });
 });
+const Role = {
+    roleName: "software engineer",
+    jobFamily: "engineering",
+    specification: "add spec later",
+    capabilityName: "engineering",
+    bandName: "band1",
+    responsibilities:"responsibilities", 
+    sharepointLink:"https://kainossoftwareltd.sharepoint.com/SitePages/Home.aspx"
+
+};
+describe("roleService", function (){
+    describe("createRole", function (){
+        it("should return id from response", async () => {
+            const mock = new MockAdapter(axios);
+            mock.onPost(roleService.URL).reply(200,1);
+            mock;
+            const results = await roleService.createRole(Role);
+            expect(1).to.deep.equal(results);
+
+
+        });
+    });
+});
+it("should return invalid from 400 error", async () => {
+    const mock = new MockAdapter(axios);
+
+    mock.onPost(roleService.URL).reply(400, 1);
+    let error;
+
+      try {
+        await roleService.createRole(Role);
+      } catch (e) {
+        error = e.message;
+      }
+
+    expect(error).to.deep.equal("Invalid data");
+});
+it("should return Could not create Role from 500 error", async () => {
+    const mock = new MockAdapter(axios);
+
+    mock.onPost(roleService.URL).reply(500, 1);
+    let error;
+
+      try {
+        await roleService.createRole(Role);
+      } catch (e) {
+        error = e.message;
+      }
+
+    expect(error).to.deep.equal("Could not create Role");
+});
