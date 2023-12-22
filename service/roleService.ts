@@ -37,4 +37,13 @@ module.exports.createRole = async function(role: Role): Promise<number> {
         throw new Error("Could not create orders");
     }
 };
-    
+module.exports.getAllBandRoles = async function() {
+    try{
+        const response = await axios.get("http://localhost:8080/api/BandRole");
+
+        return response.data;
+    } catch(e) {
+        console.error("Could not get the Band Roles");
+        return new Error("Could not get Band Role");
+    }
+};
