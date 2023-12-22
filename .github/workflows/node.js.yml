@@ -2,9 +2,9 @@ name: Install Dependancies
 
 on:
     push:
-      branches: [ main ]
+      branches: [ main, ready-for-signoff ]
     pull_request:
-      branches: [ main ]
+      branches: [ main, ready-for-signoff ]
 
 jobs:
   build:
@@ -30,3 +30,6 @@ jobs:
 
     - name: Run linter
       run: npm run lint
+
+    - name: Run Tests
+      run: npm run test
