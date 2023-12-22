@@ -27,9 +27,3 @@ module.exports.validateRole = function (role: Role):string{
 
     return null;
 };
-
-
-
-
-
-
