@@ -7,7 +7,7 @@ const token = "3c8084d2-0a48-4f7a-84d5-0b742c617786";
 const login = {
     username : "admin",
     password : "admin"
-}
+};
 describe("AuthService", function () {
     describe("login", function () {
         it("Should return token from response on successfull login", async () => {
@@ -17,7 +17,7 @@ describe("AuthService", function () {
 
             mock.onPost(authService.URL).reply(200, data);
 
-            let result = await authService.login(login);
+            const result = await authService.login(login);
             expect(result[0]).to.equal(token);
         });
 

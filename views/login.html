@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../public/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-        <link rel="stylesheet" href="">
+        <link rel="icon" type="image/x-icon" href="../public/images/favicon.ico">
         <title>Kainos Role Management System</title>
     </head>
       <main>
@@ -38,16 +38,15 @@
                           </div>
                         {% endif %}
                         <div class="form-outline mb-4">
-                          <input type="text" id="username" class="form-control"
-                            placeholder="Email address" />
+                          <input type="text" id="username" class="form-control" placeholder="Email address" name="username"/>
                         </div>
       
                         <div class="form-outline mb-4">
-                          <input type="password" id="password" class="form-control" placeholder="password"/>
+                          <input type="password" id="password" class="form-control" placeholder="password" name="password"/>
                         </div>
       
                         <div class="text-center pt-1 mb-5 pb-1">
-                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
+                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" id="login" type="submit">Log
                             in</button>
                           <a class="text-muted" href="#!">Forgot password?</a>
                         </div>
