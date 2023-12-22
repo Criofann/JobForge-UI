@@ -20,21 +20,5 @@ describe("AuthService", function () {
             const result = await authService.login(login);
             expect(result[0]).to.equal(token);
         });
-
-        /* it("should throw exception when 500 error returned from axios", async () => {
-            const mock = new MockAdapter(axios);
-    
-            mock.onGet(roleService.URL).reply(500);
-    
-            let error;
-    
-            try {
-              await roleService.getAllRoles();
-            } catch (e) {
-                error = e.message;
-            }
-            
-            expect(error).to.equal("Could not get roles");
-          }); */
     });
 });
