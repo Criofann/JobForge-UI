@@ -11,7 +11,7 @@ body {
 }
 
 .banner-pic{
-    background-image: url('../images/banner.png');
+    background-image: url('../images/banner.jpeg');
 }
 
 .pad-register-btn {
@@ -24,7 +24,6 @@ body {
 
     /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, 	#283583, #41679f, #009fe3);
-
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, #283583, #41679f, #009fe3);
 }
@@ -34,6 +33,7 @@ body {
         height: 100vh !important;
     }
 }
+
 @media (min-width: 769px) {
     .gradient-custom-2 {
         border-top-right-radius: .3rem;
@@ -42,6 +42,6 @@ body {
 }
 
 .banner {
-    height: 600px;
+    height: 425px;
     width: 100%;
 }
