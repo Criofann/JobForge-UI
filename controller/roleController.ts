@@ -28,4 +28,20 @@ module.exports = function(app: Application){
         }
         res.render("roles", { bandRoles : data});
     });
+        } catch (e) {
+            console.log(e);
+        }
+        res.render("roles", { roles : data, bands : dataa});
+    });
+
+    app.get("/job-role-spec/:roleName", async (req: Request, res: Response) => {
+        let data: Role;
+        try {
+            data = await roleService.getRoleByID(req.params.roleName);
+        } catch (e) {
+            console.error(e);
+        }
+
+        res.render("job-role-spec", { role: data });
+    });
 };
