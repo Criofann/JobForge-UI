@@ -24,33 +24,33 @@
                             {{ errormessage }}
                         </div>
                         {% endif %}
-                    <form action="/add-job-role" method="post">
+                    <form action="/add-job-role" method="post" style="width: 25%">
                         <div class="form-group">
-                            <label for="roleName">roleName</label>
+                            <label for="roleName">Role Name</label>
                             <input type="text" id="roleName" name="roleName" class="form-control" value="{{ roleName }}" required>
                         </div>
                         <div>
-                            <label for="specification">specification</label>
+                            <label for="specification">Specification</label>
                             <input type="text" id="specification" name="specification" class="form-control" value="{{ specification }}" required>
                         </div>
                         <div>
-                            <label for="capabilityName">capabilityName</label>
+                            <label for="capabilityName">Capability Name</label>
                             <input type="text" id="capabilityName" name="capabilityName" class="form-control" value="{{ capabilityName }}" required>
                         </div>
                         <div>
-                            <label for="bandName">bandName</label>
+                            <label for="bandName">Band Name</label>
                             <input type="text" id="bandName" name="bandName" class="form-control" value="{{ bandName }}" required>
                         </div>
                         <div>
-                            <label for="responsibilities">responsibilities</label>
+                            <label for="responsibilities">Responsibilities</label>
                             <input type="text" id="responsibilities" name="responsibilities" class="form-control" value="{{ responsibilities }}" required>
                         </div>
                         <div>
-                            <label for="sharepointLink">sharepointLink</label>
+                            <label for="sharepointLink">Sharepoint Link</label>
                             <input type="text" id="sharepointLink" name="sharepointLink" class="form-control" value="{{ sharepointLink }}" required>
                         </div>
                         <div>
-                            <label for="jobFamily">jobFamily</label>
+                            <label for="jobFamily">Job Family</label>
                             <input type="text" id="jobFamily" name="jobFamily" class="form-control" value="{{ jobFamily }}" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
