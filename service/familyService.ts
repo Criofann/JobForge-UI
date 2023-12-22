@@ -9,7 +9,6 @@ module.exports.createFamily = async function(RoleFamily: RoleFamily): Promise<nu
         }
         
         try{
-            console.log(RoleFamily);
             const response = await axios.post("http://localhost:8080/api/job-family/", RoleFamily);
             return response.data;
         } catch (e) {

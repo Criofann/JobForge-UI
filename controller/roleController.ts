@@ -8,14 +8,14 @@ const bandService = require("../service/bandService");
 module.exports = function(app: Application){
     app.get("/job-roles", async (req: Request, res: Response) => {
         let data: Role[];
-        let dataa: Band[];
+        let bands: Band[];
         try{
             data = await roleService.getAllRoles();
-            dataa = await bandService.getAllBands();
+            bands = await bandService.getAllBands();
         } catch (e) {
             console.log(e);
         }
-        res.render("roles", { roles : data, bands : dataa});
+        res.render("roles", { roles : data, bands : bands});
     });
 
     app.get("/job-role-spec/:roleName", async (req: Request, res: Response) => {
