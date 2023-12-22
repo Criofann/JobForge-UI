@@ -1,4 +1,4 @@
-import { Role } from "../model/Role";
+import { Role } from "../model/role";
 import { Band } from "../model/band";
 import { BandRole } from "../model/bandRole";
 import { Application, Request, Response } from "express";
@@ -8,15 +8,15 @@ const bandService = require("../service/bandService");
 
 module.exports = function(app: Application){
     app.get("/roles", async (req: Request, res: Response) => {
-        let data: Role[];
-        let dataa: Band[];
+        let roleData: Role[];
+        let bandData: Band[];
         try{
-            data = await roleService.getAllRoles();
-            dataa = await bandService.getAllBands();
+            roleData = await roleService.getAllRoles();
+            bandData = await bandService.getAllBands();
         } catch (e) {
             console.log(e);
         }
-        res.render("roles", { roles : data, bands : dataa});
+        res.render("roles", { roles : roleData, bands : bandData});
     });
 
     app.get("/job-roles", async (req: Request, res: Response) => {
@@ -27,11 +27,6 @@ module.exports = function(app: Application){
             console.log(e);
         }
         res.render("roles", { bandRoles : data});
-    });
-        } catch (e) {
-            console.log(e);
-        }
-        res.render("roles", { roles : data, bands : dataa});
     });
 
     app.get("/job-role-spec/:roleName", async (req: Request, res: Response) => {
