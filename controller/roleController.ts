@@ -7,17 +7,6 @@ const roleService = require("../service/roleService");
 const bandService = require("../service/bandService");
 
 module.exports = function(app: Application){
-    app.get("/roles", async (req: Request, res: Response) => {
-        let roleData: Role[];
-        let bandData: Band[];
-        try{
-            roleData = await roleService.getAllRoles();
-            bandData = await bandService.getAllBands();
-        } catch (e) {
-            console.log(e);
-        }
-        res.render("roles", { roles : roleData, bands : bandData});
-    });
 
     app.get("/job-roles", async (req: Request, res: Response) => {
         let data: BandRole[];

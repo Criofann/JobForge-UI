@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Role } from "../model/Role";
+import { Role } from "../model/role";
 const roleValidator = require("../validator/roleValidator");
 axios.defaults.baseURL = "http://localhost:8080";
 
@@ -7,7 +7,7 @@ module.exports.URL = "/api/job-roles";
 
 module.exports.getAllRoles = async function() {
     try{
-        const response = await axios.get(this.URL);
+        const response = await axios.get("http://localhost:8080/api/job-roles/");
         return response.data;
     } catch(e) {
         throw new Error("Could not get roles");
