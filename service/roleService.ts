@@ -30,18 +30,4 @@ module.exports.createRole = async function(role: Role): Promise<number> {
                 throw new Error("Could not create Role");
             }
         }
-    };
-    
-
-module.exports.getRoleByID = async function (roleName: string): Promise<Role> {
-    try {
-        const response = await axios.get(this.URL + roleName);
-
-        return response.data;
-    } catch (e) {
-        throw new Error("Could not get roles");
-    }
 };
-
-
-    
