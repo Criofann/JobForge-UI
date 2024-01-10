@@ -39,7 +39,7 @@ module.exports.createRole = async function(role: Role): Promise<number> {
 };
 module.exports.getAllBandRoles = async function() {
     try{
-        const response = await axios.get("http://localhost:8080/api/BandRole");
+        const response = await axios.get("http://localhost:8080/api/band-role");
 
         return response.data;
     } catch(e) {
