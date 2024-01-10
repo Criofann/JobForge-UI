@@ -45,5 +45,4 @@ app.get("/", (req: Request, res: Response) => {
     res.render("index");
 });
 
-require("./controller/roleController")(app);
 require("./controller/authController")(app);
