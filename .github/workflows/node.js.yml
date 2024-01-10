@@ -2,9 +2,9 @@ name: Install Dependancies
 
 on:
     push:
-      branches: [ main, ready-for-signoff ]
+      branches: [ main ]
     pull_request:
-      branches: [ main, ready-for-signoff ]
+      branches: [ main ]
 
 jobs:
   build:
