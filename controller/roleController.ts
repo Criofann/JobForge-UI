@@ -3,7 +3,7 @@ import { Application, Request, Response } from "express";
 
 
 const roleService = require("../service/roleService");
-const bandService = require("../service/bandService");
+
 
 module.exports = function(app: Application){
     app.get("/job-roles", async (req: Request, res: Response) => {
@@ -24,7 +24,7 @@ module.exports = function(app: Application){
         const role: Role = req.body;
         try{
              await roleService.createRole(role);
-             res.redirect("http://localhost:3000/job-roles")
+             res.redirect("http://localhost:3000/job-roles");
         }
         catch(e) {
             res.locals.errormessage = e.message;
