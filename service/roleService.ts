@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Role } from "../model/role";
+import { Role } from "../model/Role";
 const roleValidator = require("../validator/roleValidator");
 
 module.exports.getAllRoles = async function() {
