@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Role } from "./model/Role";
 
 const express = require("express");
 const path = require("path");
@@ -24,7 +25,20 @@ const nunjucksConfig = {
 nunjucks.configure(appViews, nunjucksConfig);
 
 // Configure Express
-app.set("view engine", "html");
+app.set('view engine', 'html');
+
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
+app.use(express.json())
+
+app.use(express.urlencoded({ extended: true }));
+
+declare module 'express-session' {
+    interface SessionData {
+        roleToUpdate: Role;
+        updatedRole: Role;
+    }
+}
 
 app.listen(3000, () => {
     console.log("Server listening on port 3000");
