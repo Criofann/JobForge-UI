@@ -7,11 +7,13 @@ const roleService = require("../service/roleService");
 module.exports = function(app: Application){
     app.get("/job-roles", async (req: Request, res: Response) => {
         let data: BandRole[];
+
         try{
             data = await roleService.getAllBandRoles();
         } catch (e) {
             console.log(e);
         }
+
         res.render("roles", { bandRoles : data});
     });
 
@@ -54,5 +56,21 @@ module.exports = function(app: Application){
             console.log(e);
         }
         res.redirect("/job-roles-delete");
+    });
+
+    app.get("/add-job-role", async(req: Request, res: Response)=>{
+        res.render("add-job-role");
+        
+    });
+    app.post("/add-job-role",  async (req:  Request, res: Response) => {
+        const role: Role = req.body;
+        try{
+             await roleService.createRole(role);
+             res.redirect("http://localhost:3000/job-roles");
+        }
+        catch(e) {
+            res.locals.errormessage = e.message;
+            res.render("add-job-role", req.body);
+        } 
     });
 };

@@ -9,7 +9,6 @@ module.exports = {
     ignorePatterns: ["node_modules/", "dist/"],
     env: {
         node: true,
-        mocha: true,
     },
     rules: {
         semi: ["error", "always"],

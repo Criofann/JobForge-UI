@@ -5,9 +5,7 @@
     "scripts": {
         "start": "npx tsc && cp -R views dist && node dist/app.js",
         "lint": "eslint .",
-        "test": "ts-mocha test/unit/**/*.ts",
-        "test-ui": "mocha --timeout 10000 test/ui/**/*.js",
-        "lint-fix": "npm run lint -- --fix"
+        "test": "ts-mocha test/unit/**/*.ts"
     },
     "author": "",
     "license": "ISC",
@@ -17,10 +15,9 @@
         "@types/express-session": "1.17.9",
         "@types/jest": "^29.5.11",
         "@types/node": "^20.8.7",
-        "angular": "^1.6.10",
         "axios": "^1.5.1",
         "axios-mock-adapter": "^1.22.0",
-        "chai": "^5.0.0",
+        "chai": "^4.3.10",
         "common": "^0.2.5",
         "eslint": "^8.56.0",
         "express": "^4.18.2",
@@ -34,14 +31,12 @@
     "devDependencies": {
         "@types/chai": "^4.3.11",
         "@types/jest": "^29.5.11",
-        "@typescript-eslint/eslint-plugin": "^6.18.1",
-        "@typescript-eslint/parser": "^6.18.1",
+        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@typescript-eslint/parser": "^6.14.0",
         "axios-mock-adapter": "^1.21.4",
         "chai": "^4.3.10",
-        "chromedriver": "^120.0.0",
         "eslint": "^8.55.0",
         "mocha": "^10.2.0",
-        "selenium-webdriver": "^4.16.0",
         "ts-mocha": "^10.0.0"
     }
 }
