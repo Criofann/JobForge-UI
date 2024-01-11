@@ -40,13 +40,12 @@ module.exports = function(app: Application){
             console.error(e);
         }
 
-        console.log(data);
-
-        res.render("update-role-select", { Role: data });
+        res.render("update-role-select", { Roles: data });
     });
 
     app.post("/update-role-select", async (req: Request, res: Response) => {
-        req.session.roleToUpdate = req.body.role
+        console.log(req.body)
+        req.session.roleToUpdate = req.body.roleName
         res.redirect('/update-role')
     });    
 
@@ -54,6 +53,7 @@ module.exports = function(app: Application){
         let data: Role;
         try{
             data = await roleService.getRoleByID(req.session.roleToUpdate);
+            console.log(data)
         } catch (e) {
             console.log(e);
         }
@@ -61,24 +61,29 @@ module.exports = function(app: Application){
     });
 
     app.post("/update-role", async (req: Request, res: Response) => {
+        console.log(req.body)
+
         req.session.updatedRole = req.body
         res.redirect('/update-role-confirmation')
     });
     
     app.get('/update-role-confirmation', async (req:Request, res:Response) => {
-        res.render('update-role-confirmation', req.session.roleToUpdate)
+        res.render('update-role-confirmation', req.session.updatedRole)
     })
 
     app.post('/update-role-confirmation',async (req:Request, res: Response) => {
-        let data: Role = req.session.roleToUpdate
+        let data: Role = req.session.updatedRole
         let roleName: String
+        console.log(req.session.updatedRole)
+        console.log("break point")
+        console.log(data)
 
         try {
-            roleName = await roleService.updateRoles(data)
+            roleName = await roleService.updateRoles(req.session.roleToUpdate, data)
 
             req.session.updatedRole = undefined
 
-            res.redirect('/job-role/' + roleName)
+            res.redirect('/view-role')
         } catch (e) {
             console.error(e);
 

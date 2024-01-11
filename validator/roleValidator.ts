@@ -1,4 +1,4 @@
-import { Role } from "../model/role";
+import { Role } from "../model/Role";
 module.exports.validateRole = function (role: Role): string {
     if (role.roleName.length > 80) {
         return "Role name greater than 80 characters";

@@ -4,6 +4,7 @@ import { Role } from "./model/Role";
 const express = require("express");
 const path = require("path");
 const nunjucks = require("nunjucks");
+const session = require('express-session')
 
 const app = express();
 
@@ -33,9 +34,11 @@ app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use(session({ secret: ' NOT HARDCODED SECRET ', cookie: {maxAge: 60000}}));
+
 declare module 'express-session' {
     interface SessionData {
-        roleToUpdate: Role;
+        roleToUpdate: String;
         updatedRole: Role;
     }
 }

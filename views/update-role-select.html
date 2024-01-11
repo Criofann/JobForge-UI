@@ -19,12 +19,12 @@
             <section id="form" class="bg-light py-5">
                 <div class="container">
                     <h3>Choose A Job Role to Edit</h3>
-                    <form action="/edit-job-role-selection" method="post">
+                    <form action="/update-role-select" method="post">
                         <div class="form-group">
-                                <label for="role">Job Role</label>
-                                <select id="role" name="role" class="form-control" required>
-                                    {% for role in roles %}
-                                    <option value="{{ role.roleName }}">{{ role.roleName }}</option>
+                                <label for="roleName">Job Role</label>
+                                <select id="roleName" name="roleName" class="form-control" required>
+                                    {% for Role in Roles %}
+                                    <option value="{{ Role.roleName }}">{{ Role.roleName }}</option>
                                     {% endfor %}
                                 </select>
                         </div>
