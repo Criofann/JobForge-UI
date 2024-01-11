@@ -1,4 +1,5 @@
 import { Role } from "../model/Role";
+import { BandRole } from "../model/BandRole";
 import { Application, Request, Response } from "express";
 
 const roleService = require("../service/roleService");
