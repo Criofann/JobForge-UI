@@ -4,7 +4,7 @@ import { Role } from "./model/Role";
 const express = require("express");
 const path = require("path");
 const nunjucks = require("nunjucks");
-const session = require('express-session')
+const session = require("express-session");
 
 const app = express();
 
@@ -26,19 +26,19 @@ const nunjucksConfig = {
 nunjucks.configure(appViews, nunjucksConfig);
 
 // Configure Express
-app.set('view engine', 'html');
+app.set("view engine", "html");
 
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use("/public", express.static(path.join(__dirname, "public")));
 
-app.use(express.json())
+app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(session({ secret: ' NOT HARDCODED SECRET ', cookie: {maxAge: 60000}}));
+app.use(session({ secret: " NOT HARDCODED SECRET ", cookie: {maxAge: 60000}}));
 
-declare module 'express-session' {
+declare module "express-session" {
     interface SessionData {
-        roleToUpdate: String;
+        roleToUpdate: string;
         updatedRole: Role;
     }
 }

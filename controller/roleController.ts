@@ -44,16 +44,15 @@ module.exports = function(app: Application){
     });
 
     app.post("/update-role-select", async (req: Request, res: Response) => {
-        console.log(req.body)
-        req.session.roleToUpdate = req.body.roleName
-        res.redirect('/update-role')
+        req.session.roleToUpdate = req.body.roleName;
+        res.redirect("/update-role");
     });    
 
     app.get("/update-role", async (req: Request, res: Response) => {
         let data: Role;
         try{
             data = await roleService.getRoleByID(req.session.roleToUpdate);
-            console.log(data)
+
         } catch (e) {
             console.log(e);
         }
@@ -61,35 +60,30 @@ module.exports = function(app: Application){
     });
 
     app.post("/update-role", async (req: Request, res: Response) => {
-        console.log(req.body)
 
-        req.session.updatedRole = req.body
-        res.redirect('/update-role-confirmation')
+        req.session.updatedRole = req.body;
+        res.redirect("/update-role-confirmation");
     });
     
-    app.get('/update-role-confirmation', async (req:Request, res:Response) => {
-        res.render('update-role-confirmation', req.session.updatedRole)
-    })
+    app.get("/update-role-confirmation", async (req:Request, res:Response) => {
+        res.render("update-role-confirmation", req.session.updatedRole);
+    });
 
-    app.post('/update-role-confirmation',async (req:Request, res: Response) => {
-        let data: Role = req.session.updatedRole
-        let roleName: String
-        console.log(req.session.updatedRole)
-        console.log("break point")
-        console.log(data)
+    app.post("/update-role-confirmation",async (req:Request, res: Response) => {
+        const data: Role = req.session.updatedRole;
 
         try {
-            roleName = await roleService.updateRoles(req.session.roleToUpdate, data)
+            await roleService.updateRoles(req.session.roleToUpdate, data);
 
-            req.session.updatedRole = undefined
+            req.session.updatedRole = undefined;
 
-            res.redirect('/view-role')
+            res.redirect("/view-role");
         } catch (e) {
             console.error(e);
 
-            res.locals.errormessage = e.message
+            res.locals.errormessage = e.message;
 
-            res.render('update-role-confirmation', req.session.updatedRole)
+            res.render("update-role-confirmation", req.session.updatedRole);
         }
-    })
+    });
 };
