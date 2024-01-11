@@ -26,8 +26,6 @@ module.exports = function(app: Application){
             console.error(e);
         }
 
-        console.log(data);
-
         res.render("job-roles", { Role: data });
     });
 
