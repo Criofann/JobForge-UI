@@ -4,7 +4,6 @@ import { Application, Request, Response } from "express";
 
 const roleService = require("../service/roleService");
 
-
 module.exports = function(app: Application){
     app.get("/job-roles", async (req: Request, res: Response) => {
         let data: Role[];
@@ -16,10 +15,12 @@ module.exports = function(app: Application){
         }
         res.render("roles", { roles : data});
     });
+
     app.get("/add-job-role", async(req: Request, res: Response)=>{
         res.render("add-job-role");
         
     });
+
     app.post("/add-job-role",  async (req:  Request, res: Response) => {
         const role: Role = req.body;
         try{
@@ -31,7 +32,4 @@ module.exports = function(app: Application){
             res.render("add-job-role", req.body);
         } 
     });
-       
-
-   
 };

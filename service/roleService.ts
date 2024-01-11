@@ -13,6 +13,17 @@ module.exports.getAllRoles = async function() {
         throw new Error("Could not get roles");
     }
 };
+
+module.exports.getRoleByID = async function (roleName: string): Promise<Role> {
+    try {
+        const response = await axios.get("http://localhost:8080/api/job-roles/" + roleName);
+
+        return response.data;
+    } catch (e) {
+        throw new Error("Could not get roles");
+    }
+};
+    
 module.exports.createRole = async function(role: Role): Promise<number> {
     const error: string = roleValidator.validateRole(role);
         if (error){
