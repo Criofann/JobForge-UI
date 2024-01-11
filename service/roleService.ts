@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Role } from "../model/Role";
+import { Role } from "../model/role";
 const roleValidator = require("../validator/roleValidator");
 axios.defaults.baseURL = "http://localhost:8080";
 
@@ -37,4 +37,13 @@ module.exports.createRole = async function(role: Role): Promise<number> {
         throw new Error("Could not create orders");
     }
 };
-    
+module.exports.getAllBandRoles = async function() {
+    try{
+        const response = await axios.get("http://localhost:8080/api/band-role");
+
+        return response.data;
+    } catch(e) {
+        console.error("Could not get the Band Roles");
+        return new Error("Could not get Band Role");
+    }
+};
