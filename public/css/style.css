@@ -1,0 +1,43 @@
+.hero__block {
+    background-color: #283583;
+    color: #fff;
+    padding: 40px;
+    position: relative;
+}
+
+.hero--primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-bg-img {
+    background-image: url('../images/hero-img.jpeg');
+    position: relative;
+    height: auto;
+    max-width: fit-content;
+    justify-content: center;
+
+}
+
+.hero-section {
+    width: 100%;
+    height: 65vh;
+    background-image: url("../images/hero-img.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container {
+    background-color: #283583;
+    color: #fff;
+    padding: 40px;
+    position: relative;
+}
