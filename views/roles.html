@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roles</title>
+    <title >Roles</title>
+    <link rel="icon" type="image/x-icon" href="https://kainossoftwareltd.sharepoint.com/:i:/r/marketing/Shared%20Documents/Documents/Corporate/Logos,%20icons%20and%20illustrations/Logos/Kainos%20logo/Kainos%20800x250%20Logo%20(Transparent%20BG).png?csf=1&web=1&e=7Pc56z">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <header class="bg-dark text-light">
+    <header style="background-color: #ffffff; color: #41679f;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Roles</h1>
-                </div>
-            </div>
+            <table >
+                <thead>
+                    <tr>
+                        <td style="width: 30%; vertical-align: bottom;">
+                            <img src="https://kainossoftwareltd.sharepoint.com/:i:/r/marketing/Shared%20Documents/Documents/Corporate/Logos,%20icons%20and%20illustrations/Logos/Kainos%20logo/Kainos%20800x250%20Logo%20(Transparent%20BG).png?csf=1&web=1&e=7Pc56z"
+                             alt="kainos Logo" style="float: left; margin-right: 10px;" width="200">
+                        </td>
+                        <td style="vertical-align: bottom; text-align: center;">
+                            <h1>Roles</h1>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </header>
     <main class="container mt-4">
+        <hr width="100%" size="20" color="blue" noshade>
         <section id="roles" class="mt-4">
-            <h2>Kainos Job Roles</h2>
+            <h2 style="color: #61a83f;">Kainos Job Roles</h2>
             {% if roles and roles.length > 0 %}
-            <table class="table">
+            <table class="table" style = "border:8px #283583 solid;">
                 <thead>
                     <tr>
                         <th scope="col">Role Name</th>
@@ -35,7 +45,11 @@
                         <td>{{role.roleName}}</td>
                         <td>{{role.specification}}</td>
                         <td>{{role.responsibilities}}</td>
-                        <td><a href="{{role.sharepointLink}}">Sharepoint</a></td>
+                        <td>
+                            <form action="{{role.sharepointLink}}">
+                            <button type="submit" class="btn btn-primary">Sharepoint</button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -46,4 +60,22 @@
         </section>
     </main>
 </body>
+<footer>
+    <div class="card" style="background-color: #575756; color: #ffffff;">
+      <div class="card-header">
+        Kainos
+      </div>
+      <div style="display: flex; flex-direction: row; background-color: #61a83f; color: #ffffff; ">
+        <div class="card-body" style="flex: 1;">
+          <h5 class="card-title" style="text-align: center; float: left;">Contact us</h5>
+        </div>
+        <div class="card-body" style="flex: 1;">
+          <p class="card-text">Email address: email@kainos.co.uk </p>
+        </div>
+        <div class="card-body" style="flex: 1;">
+          <p class="card-text">Phone Number: 123456789 </p>
+        </div>
+      </div>      
+    </div>
+  </footer>  
 </html>

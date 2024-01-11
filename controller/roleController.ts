@@ -13,4 +13,8 @@ module.exports = function(app: Application){
         }
         res.render("roles", { roles : data});
     });
+
+    app.get("/menu", async (req: Request, res: Response) => {
+        res.render("menu");
+    });
 };
