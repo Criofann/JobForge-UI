@@ -3,9 +3,11 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "start": "npx tsc && cp -R views dist && node dist/app.js",
+        "start": "npx tsc && cp -R views dist && cp -r public dist && node dist/app.js",
         "lint": "eslint .",
-        "test": "ts-mocha test/unit/**/*.ts"
+        "test": "ts-mocha test/unit/**/*.ts",
+        "test-ui": "mocha --timeout 10000 test/ui/**/*.js", 
+        "lint-fix": "npm run lint -- --fix"
     },
     "author": "",
     "license": "ISC",
@@ -37,6 +39,8 @@
         "chai": "^4.3.10",
         "eslint": "^8.55.0",
         "mocha": "^10.2.0",
-        "ts-mocha": "^10.0.0"
+        "ts-mocha": "^10.0.0",
+        "chromedriver": "^120.0.0",
+        "selenium-webdriver": "^4.16.0"
     }
 }
