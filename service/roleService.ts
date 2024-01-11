@@ -1,17 +1,16 @@
 import axios from "axios";
 import { Role } from "../model/Role";
-import { response } from "express";
 
 module.exports.getAllRoles = async function() {
     try{
-        const response = await axios.get('http://localhost:8080/api/job-roles')
-        console.log(response.data)
+        const response = await axios.get("http://localhost:8080/api/job-roles");
+        console.log(response.data);
 
-        return response.data
+        return response.data;
     } catch(e) {
-        throw new Error('Could not get roles')
+        throw new Error("Could not get roles");
     }
-}
+};
 
 module.exports.getAllBandRoles = async function() {
     try{
@@ -23,22 +22,22 @@ module.exports.getAllBandRoles = async function() {
     }
 };
 
-module.exports.getRoleByID = async function (roleName: String): Promise<Role> {
+module.exports.getRoleByID = async function (roleName: string): Promise<Role> {
     try {
         const response = await axios.get("http://localhost:8080/api/job-roles/" + roleName);
 
         return response.data;
     } catch (e) {
         throw new Error("Could not get roles");
-    };
+    }
 };
 
-module.exports.deleteRole = async function (id: String): Promise<Role> {
+module.exports.deleteRole = async function (id: string): Promise<Role> {
     try {
-        const response = await axios.delete('http://localhost:8080/api/job-roles/' + id)
+        const response = await axios.delete("http://localhost:8080/api/job-roles/" + id);
 
-        return response.data
+        return response.data;
     } catch (e) {
-    throw new Error('Could not delete role')
+    throw new Error("Could not delete role");
     }
-} 
+};

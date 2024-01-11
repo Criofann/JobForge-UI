@@ -2,8 +2,7 @@ import { Role } from "../model/Role";
 import { Application, Request, Response } from "express";
 import { BandRole } from "../model/BandRole";
 
-const roleService = require('../service/roleService')
-const bandService = require("../service/bandService");
+const roleService = require("../service/roleService");
 
 module.exports = function(app: Application){
     app.get("/job-roles", async (req: Request, res: Response) => {
@@ -25,7 +24,7 @@ module.exports = function(app: Application){
         }
 
         res.render("job-role-spec", { role: data });
-    })
+    });
 
     app.get("/job-role-spec-delete/:roleName", async (req: Request, res: Response) => {
         let data: Role;
@@ -35,7 +34,7 @@ module.exports = function(app: Application){
             console.error(e);
         }
         res.render("job-role-spec-admin", { role: data });
-    })
+    });
 
     app.get("/job-roles-delete", async (req: Request, res: Response) => {
         let data: BandRole[];
@@ -45,16 +44,15 @@ module.exports = function(app: Application){
             console.log(e);
         }
         res.render("roles-delete", { bandRoles : data});
-    })
+    });
 
     app.post("/delete-role", async (req: Request, res: Response) => {
-        let data: Role[];
-        let id: Role = req.body.roleName
+        const id: Role = req.body.roleName;
         try{
-            data = await roleService.deleteRole(id);
+            await roleService.deleteRole(id);
         } catch (e) {
             console.log(e);
         }
-        res.redirect('/job-roles-delete');
-    })
-}
+        res.redirect("/job-roles-delete");
+    });
+};

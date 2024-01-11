@@ -20,7 +20,7 @@ nunjucks.configure(appViews, nunjucksConfig);
 // Configure Express
 app.set("view engine", "html");
 
-app.use(express.json())
+app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -33,4 +33,4 @@ app.get("/", (req: Request, res: Response) => {
     res.render("index");
 });
 
-require('./controller/roleController')(app);
+require("./controller/roleController")(app);
